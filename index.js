@@ -54,9 +54,12 @@ async function run() {
     // Mongodb database filtaring cetagory base product
     app.get("/cetagory/:id", async (req, res) => {
       const id = req.params.id;
-      const quary = { category: id };
+      console.log(id);
+      const quary = { cetagory: id };
+      console.log(quary);
       const result = await All_Furnitures.find(quary).toArray();
       res.send(result);
+      console.log("result", result);
     });
     // Product Details
     app.get("/porduct-Details/:id", async (req, res) => {
